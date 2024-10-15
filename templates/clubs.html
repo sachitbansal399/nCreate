@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center">Tech Clubs Directory</h1>
+    <p class="text-center">Join a club and participate in exciting activities, projects, and events!</p>
+
+    <div class="row">
+        {% for club in clubs %}
+        <div class="col-md-6 mb-3">
+            <div class="card club-card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ club.name }}</h5>
+                    <p class="card-text">{{ club.description }}</p>
+                    <p class="card-text"><strong>Contact:</strong> {{ club.contact }}</p>
+                    <p class="card-text"><strong>Members:</strong> {{ club.members|length }} members</p>
+                    {% if user in club.members %}
+                        <button class="btn btn-secondary" disabled>Joined</button>
+                    {% else %}
+                        <form method="POST" action="{{ url_for('clubs_directory') }}">
+                            <input type="hidden" name="club_name" value="{{ club.name }}">
+                            <button type="submit" class="btn btn-primary">Join Club</button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

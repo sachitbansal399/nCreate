@@ -1,0 +1,203 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    background: linear-gradient(to bottom right, #6a11cb, #2575fc); /* Dynamic gradient */
+    color: #ffffff; /* White text for contrast */
+    margin: 0;
+    padding: 0;
+    transition: background 0.5s; /* Smooth transition for background */
+}
+
+
+.profile-pic {
+    width: 150px; /* Set desired width */
+    height: 150px; /* Set desired height */
+    border-radius: 70%; /* Make it circular */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    overflow: hidden; /* Hide any overflow from the image */
+}
+
+
+/* Headings */
+h1 {
+    font-family: 'Roboto', sans-serif; /* Using Roboto for headings */
+    font-weight: 700; /* Bold */
+    font-size: 3em; /* Larger font size */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Deeper text shadow for impact */
+    letter-spacing: 1px; /* Space between letters */
+    margin-bottom: 20px; /* Margin for spacing */
+}
+
+h2, h3, h4 {
+    font-family: 'Poppins', sans-serif; /* Using Poppins for subheadings */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* Text shadow */
+    letter-spacing: 0.5px; /* Space between letters */
+}
+
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(90deg, rgba(38, 198, 218, 1) 0%, rgba(5, 149, 255, 1) 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Strong shadow for navbar */
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 30px; /* Soft rounded corners */
+    padding: 12px 25px; /* Ample padding */
+    border: none; /* No default border */
+    background: linear-gradient(90deg, rgba(0, 255, 221, 1) 0%, rgba(0, 132, 255, 1) 100%); /* Bright gradient */
+    color: #fff;
+    font-family: 'Roboto', sans-serif; /* Using Roboto for buttons */
+    font-weight: 600; /* Bold text */
+    font-size: 16px; /* Larger font size */
+    letter-spacing: 1px; /* Space between letters */
+    text-transform: uppercase; /* Uppercase text */
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    position: relative; /* For positioning context */
+    z-index: 10; /* Ensure buttons are above other content */
+    cursor: pointer; /* Show pointer cursor */
+}
+
+.btn:hover {
+    transform: translateY(-2px) scale(1.05); /* Lift and scale effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Shadow on hover */
+}
+
+/* Custom Jumbotron Styles */
+.custom-jumbotron {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background for contrast */
+    border-radius: 30px; /* Rounded corners for softer appearance */
+    padding: 60px;
+    transition: transform 0.3s, background 0.5s; /* Hover effects */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    position: relative; /* Position for after pseudo-element */
+    overflow: hidden; /* Hide overflow for pseudo-element */
+}
+
+.custom-jumbotron::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(150deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.1)); /* Overlay for depth */
+    border-radius: 30px;
+    z-index: 0; /* Place behind the content */
+}
+
+.custom-jumbotron h2 {
+    position: relative;
+    z-index: 1; /* Bring text above overlay */
+    font-weight: 600; /* Semi-bold text */
+}
+
+.custom-jumbotron:hover {
+    transform: scale(1.03); /* Slight zoom effect on hover */
+}
+
+/* Card Styles */
+.card, .club-card, .post-card, .feedback-form, .chat-container {
+    border: none; /* Remove default border */
+    border-radius: 30px; /* Soft rounded corners */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5); /* Strong shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition effects */
+}
+
+.card:hover, .club-card:hover, .post-card:hover, .feedback-form:hover, .chat-container:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7); /* Deeper shadow on hover */
+}
+
+/* List Styles */
+.event-list, .club-list {
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+}
+
+.list-group-item {
+    border-radius: 15px; /* Rounded corners */
+    padding: 15px; /* Padding for list items */
+    margin-bottom: 10px; /* Space between items */
+    transition: background-color 0.3s; /* Transition for hover */
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
+    color: #eaeaea; /* Light text color for visibility */
+}
+
+.list-group-item:hover {
+    background-color: rgba(255, 255, 255, 0.25); /* Lighten on hover */
+}
+
+/* Main Content Styles */
+.main-content {
+    background: rgba(0, 0, 0, 0.85); /* Darker background for contrast */
+    border-radius: 30px; /* Rounded corners */
+    padding: 40px; /* Ample padding */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    transition: transform 0.3s; /* Transition effect */
+}
+
+.main-content:hover {
+    transform: scale(1.01); /* Slight zoom on hover */
+}
+
+/* Chat Container */
+.chat-container {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 30px; /* Rounded corners */
+    padding: 20px; /* Padding for content */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    transition: background 0.3s; /* Transition effect */
+}
+
+.chat-container:hover {
+    background: rgba(255, 255, 255, 0.2); /* Lighten on hover */
+}
+
+/* Chat Messages */
+.chat-messages {
+    max-height: 400px; /* Fixed height */
+    overflow-y: auto; /* Scroll for overflow */
+    margin-bottom: 20px; /* Space below */
+    padding: 10px; /* Padding for chat messages */
+}
+
+/* Form Styles */
+.feedback-form {
+    padding: 20px; /* Padding for form */
+    border-radius: 20px; /* Rounded corners */
+    transition: transform 0.3s; /* Transition effect */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+}
+
+.feedback-form:hover {
+    transform: scale(1.01); /* Slight zoom on hover */
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px; /* Less padding on mobile */
+    }
+
+    .custom-jumbotron {
+        padding: 40px; /* Less padding on mobile */
+    }
+
+    .btn {
+        padding: 10px 20px; /* Adjust button padding for mobile */
+        font-size: 14px; /* Adjust font size */
+    }
+
+    h1 {
+        font-size: 2.5em; /* Responsive font size */
+    }
+
+    h2, h3 {
+        font-size: 1.5em; /* Responsive font size */
+    }
+}

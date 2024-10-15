@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Newsfeed</h1>
+    <p class="text-center">Catch up with the latest tech updates and events from the community.</p>
+    <div class="text-center mb-3">
+        <a href="{{ url_for('news_upload') }}" class="btn btn-primary">Submit News</a>
+    </div>
+    <div class="row">
+        {% for news in newsfeed %}
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm border-light">
+                <div class="card-body">
+                    <h5 class="card-title">{{ news.title }}</h5>
+                    <p class="card-text">{{ news.content }}</p>
+                    <p class="card-text"><small class="text-muted">Posted on: {{ news.date }}</small></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="text-center mt-4">
+        <button class="btn btn-secondary" id="load-more">Load More</button>
+    </div>
+</div>
+{% endblock %}

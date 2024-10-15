@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron text-center custom-jumbotron mt-4">
+    <h1 class="display-4">Welcome to the Delhi Tech Circuit Platform</h1>
+    <p class="lead">A hub for tech enthusiasts to collaborate, learn, and showcase their skills. Join us in building the future of technology!</p>
+    <hr class="my-4">
+    <p>Explore our clubs, participate in events, and check out amazing projects by students like you!</p>
+    <a class="btn btn-primary btn-lg animated-button" href="{{ url_for('signup') }}" role="button">Sign Up Now</a>
+    <a class="btn btn-outline-secondary btn-lg animated-button" href="{{ url_for('login') }}" role="button">Login</a>
+</div>
+{% endblock %}

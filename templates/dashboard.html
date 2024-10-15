@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <header class="text-center mb-4">
+        <h1>Welcome to Your Dashboard, {{ user }}!</h1>
+        <p class="lead">Here you can manage your profile, view registered events, and clubs.</p>
+    </header>
+
+    <main class="main-content">
+        <section class="profile-summary mb-4">
+            <h2 class="text-primary">Your Profile</h2>
+            <div class="profile-info row">
+                <div class="col-md-4 text-center">
+                    <h4>Profile Picture</h4>
+                    {% if profile_pic %}
+                        <img src="{{ url_for('static', filename='uploads/' + profile_pic) }}" class="img-fluid rounded-circle profile-pic" alt="Profile Picture">
+                    {% else %}
+                        <img src="https://via.placeholder.com/150" class="img-fluid rounded-circle profile-pic" alt="Default Profile Picture">
+                    {% endif %}
+                </div>
+                <div class="col-md-8">
+                    <h4>Bio</h4>
+                    <p>{{ bio }}</p>
+                    <h4>Your Points</h4>
+                    <p class="font-weight-bold">{{ points }}</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="registered-events mb-4">
+            <h3 class="text-primary">Your Registered Events</h3>
+            <ul class="list-group">
+                {% if events %}
+                    {% for event in events %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-light text-dark">
+                            <div>
+                                <strong>{{ event['name'] }}</strong> on {{ event['date'] }}
+                            </div>
+                            <span class="badge badge-info badge-pill">Registered</span>
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <li class="list-group-item">No registered events.</li>
+                {% endif %}
+            </ul>
+        </section>
+
+        <section class="registered-clubs mb-4">
+            <h3 class="text-primary">Your Clubs</h3>
+            <ul class="list-group">
+                {% if clubs %}
+                    {% for club in clubs %}
+                        <li class="list-group-item bg-secondary text-white">{{ club['name'] }}</li>
+                    {% endfor %}
+                {% else %}
+                    <li class="list-group-item">No registered clubs.</li>
+                {% endif %}
+            </ul>
+        </section>
+    </main>
+</div>
+{% endblock %}
